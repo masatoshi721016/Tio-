@@ -3,73 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tio App</title>
+  <title>Tio 利用者システム</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icon.png">
-  <style>
-    body {
-      font-family: sans-serif;
-      background-color: #f8fafc;
-      color: #334155;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-    }
-    .card {
-      background: #ffffff;
-      padding: 2.5rem 2rem;
-      border-radius: 1.5rem;
-      text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      max-width: 360px;
-      width: 90%;
-    }
-    .app-icon {
-      width: 140px;
-      height: 140px;
-      border-radius: 1.5rem;
-      object-fit: cover;
-    }
-    button {
-      background: #88c13f;
-      color: white;
-      border: none;
-      padding: 0.85rem 1.75rem;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: bold;
-      margin-top: 1.5rem;
-    }
-  </style>
+  <meta name="theme-color" content="#2563eb">
+  <script>
+    // ▼ ここをご自身がデプロイした「GASのウェブアプリのURL」に書き換えてください
+    window.location.replace("https://script.google.com/macros/s/あなたの実際のGASのID/exec");
+  </script>
 </head>
 <body>
-  <div class="card">
-    <img src="icon.png" class="app-icon" alt="Tio Icon">
-    <h1 style="color:#2b6cb0; margin-top: 1rem;">Tio</h1>
-    <p id="status">通信待機中...</p>
-    <button onclick="sendData()">GASへデータ送信</button>
-  </div>
-
-  <script>
-    const GAS_URL = "https://script.google.com/macros/s/AKfycbxvuchj3EOIV23D0j6teIwsSwASZAOe7e4tG-AUuDmV2-_xomdBi3b4J7n0gHluQy9x/exec";
-
-    async function sendData() {
-      document.getElementById('status').innerText = "送信中...";
-      try {
-        const response = await fetch(GAS_URL, {
-          method: 'POST',
-          body: JSON.stringify({ action: "button_click", timestamp: new Date() })
-        });
-        const result = await response.json();
-        document.getElementById('status').innerText = "送信成功!";
-      } catch (error) {
-        document.getElementById('status').innerText = "エラーが発生しました";
-      }
-    }
-  </script>
+  <p>システムに接続しています...</p>
 </body>
 </html>
